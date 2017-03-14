@@ -62,8 +62,8 @@ WestgardRules <- function(x){
                     # A correction to make sure that even if the fifth control lies in the same 
                     # range it will not be regarded as a 4_1s.
     				if (x$rule[i-1] == "4_1s"){
-    				    x$color[i] = "green"
-    				    x$rule[i] = " "
+    				  # x$color[i] = "green"
+    				    x$rule[i]  = " "
     				}
     		}
     	}

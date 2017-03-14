@@ -58,6 +58,7 @@ fit <- function(r1, r2, ...){
     #  anova(fit) # anova table 
     #  vcov(fit) # covariance matrix for model parameters 
     #  influence(fit) # regression diagnostics
+    return(lr)
 }
 
 # run the funcions for Method Verification
@@ -76,7 +77,7 @@ all(log(data[,1]), log(data[,2]))
 
 
 ##
-##  Within Run Controls : sd,cv,mean and dist
+##  Within Run Controls : sd, cv, mean and dist
 ## 
 
 wrc <- function(hpc, lpc, ...){

@@ -60,8 +60,8 @@ LimsSetFactors <- function(unfactored){
 #                 "Invalid" = "999999999009"
 #                  etc
 # Then converting Results from Char to Num
-LimsSetNumeric <- function(to_numeric){
-	to_numeric <- within(to_numeric,
+LimsSetNumeric <- function(not_numeric){
+	to_numeric <- within(not_numeric,
 	                            {
 		                        Results[Results == "Failed"] <- "0"
 		                        Results[Results == "Target Not Detected"] <- "999999999999"
@@ -71,7 +71,7 @@ LimsSetNumeric <- function(to_numeric){
 	return(to_numeric)
 }
 
-## The function fetches the 3 bika csv data files and combines then by PatientUID
+## The function fetches the 3 bika csv data files and combines them by PatientUID
 LimsCombineCSV <- function(){
 	# Load the data
 	patients <- read.csv("./bika_csv_files/patients.csv", header = TRUE, stringsAsFactors = FALSE)
@@ -92,7 +92,7 @@ LimsCombineCSV <- function(){
 	# save combined data to csv as patients_"combined.csv"
 	write.csv(patients_combined, file = "./bika_csv_files/Patents_Combined.csv")
 
-	# Remove Columns with All NA's and write to csv calles "Patents_Combined_no_NA.csv"
+	# Remove Columns with All NA's and write to csv called "Patents_Combined_no_NA.csv"
 	patients_combined_no_NAs <- patients_combined[ , !apply( patients_combined, 2, function(x) all(is.na(x)))]
 	write.csv(patients_combined_no_NAs, file = "./bika_csv_files/Patents_Combined_no_NA.csv")
 

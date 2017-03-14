@@ -1,6 +1,7 @@
 # Statistical Process Control
-# Levy-Jennings Chart
+# Levy-Jennings Chart & Westgard Rules
 # Author : Aurthur Musendame
+
 rm(list = ls())
 setwd("~/Documents/working/")
 source("./builds/westgard_rules.R")
