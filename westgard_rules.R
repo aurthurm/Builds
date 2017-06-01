@@ -58,13 +58,21 @@ WestgardRules <- function(x){
     			x$x[i - 2] < x_mean & x$x[i - 2] >= minus_1_sd &
     			x$x[i - 3] < x_mean & x$x[i - 3] >= minus_1_sd){
     			    x$color[i] = "red"
-    				x$rule[i]  = "4_1s"
+    				  x$rule[i]  = "4_1s"
                     # A correction to make sure that even if the fifth control lies in the same 
                     # range it will not be regarded as a 4_1s.
     				if (x$rule[i-1] == "4_1s"){
-    				  # x$color[i] = "green"
-    				    x$rule[i]  = " "
+    				    x$rule[i]  = "!!!"
     				}
+                    if (x$rule[i-2] == "4_1s"){
+                        x$rule[i]  = "!!!"
+                    }
+                    if (x$rule[i-3] == "4_1s"){
+                        x$rule[i]  = "!!!"
+                    }
+                    if (x$rule[i-4] == "4_1s"){
+                        x$rule[i]  = "!!!"
+                    }
     		}
     	}
     	# 10_x Rule:

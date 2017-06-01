@@ -3,8 +3,9 @@
 # Author : Aurthur Musendame
 
 rm(list = ls())
-setwd("~/Documents/working/")
+# setwd("C:/Users/musendamea/Desktop/WorkingEnv/builds")
 source("./builds/westgard_rules.R")
+
 
 # set.seed( seed = NULL)
 
@@ -47,11 +48,11 @@ LjChart <- function(x, title = main.title){
        main = title
   )
   #  Draw the Standard Deviation Lines
-  abline(h   = c(cl.base[, 2]), 
+  abline(h   = c(cl.base[, 2]),
          col = c("red", "orange", "yellow", "green", "yellow", "orange", "red"), lty = 5)
   axis(1, at = days, labels = days, las = 2)
-  # Left Labels 
-  axis(2, at = cl.base[, 2], labels = cl.base[, 1], las = 2) 
+  # Left Labels
+  axis(2, at = cl.base[, 2], labels = cl.base[, 1], las = 2)
   # Right Labels - Numerical
   axis(4, at = cl.base[,2], labels = round(cl.base[,2], digits = 3), las = 2)
   # adding rule text to the graph
